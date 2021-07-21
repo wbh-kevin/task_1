@@ -13,7 +13,7 @@ def handle_turtle_pose(msg, turtlename):
                     rospy.Time.now(),
                     turtlename,
                     "world")
-
+#播报一个距离海龟x轴为4的点
 if __name__ == '__main__':
     rospy.init_node('turtle_tf_broadcaster')
     turtlename = rospy.get_param('~turtle')
