@@ -8,12 +8,12 @@ import turtlesim.msg
 
 def handle_turtle_pose(msg, turtlename):
     br = tf.TransformBroadcaster()
-    br.sendTransform((msg.x+4, msg.y, 0),
+    br.sendTransform((msg.x, msg.y, 0),
                     tf.transformations.quaternion_from_euler(0, 0, msg.theta),
                     rospy.Time.now(),
                     turtlename,
                     "world")
-#播报一个距离海龟x轴为4的点
+#播报原本海龟的位置
 if __name__ == '__main__':
     rospy.init_node('turtle_tf_broadcaster')
     turtlename = rospy.get_param('~turtle')
